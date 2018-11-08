@@ -10,12 +10,15 @@ class Player
 private:
 	Animation m_animation;
 	AnimatedSprite m_animated_sprite;
+	AnimatedSprite animated_spriteIdle;
+	AnimatedSprite animated_spriteJumping;
 	Player();
-
 public:
 	Player(const AnimatedSprite&);
 	~Player();
+	void doSetup();
 	AnimatedSprite& getAnimatedSprite();
+	void setAnimation(AnimatedSprite s);
 	void handleInput(Input);
 	void update();
 };

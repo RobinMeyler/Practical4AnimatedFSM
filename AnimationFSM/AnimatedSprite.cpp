@@ -50,3 +50,8 @@ void AnimatedSprite::update(){
 	}
 }
 
+void AnimatedSprite::clear()
+{
+	m_frames.pop_back();
+}
+
