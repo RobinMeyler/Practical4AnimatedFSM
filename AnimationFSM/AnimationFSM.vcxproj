@@ -30,6 +30,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Shoveling.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="SwordmanShip.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
@@ -42,6 +43,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Shoveling.cpp" />
+    <ClCompile Include="SwordmanShip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

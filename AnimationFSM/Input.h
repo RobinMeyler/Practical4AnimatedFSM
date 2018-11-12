@@ -9,12 +9,15 @@ public:
 	enum Action
 	{
 		IDLE,
-		UP,
-		LEFT,
-		RIGHT
+		CLIMBING,
+		JUMPING,
+		HAMMERING,
+		SHOVELING, 
+		SWORDMANSHIP
 	};
 
 	void setCurrent(Action);
+	void shoveling();
 	Action getCurrent();
 
 private:

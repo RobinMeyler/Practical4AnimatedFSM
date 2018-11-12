@@ -11,6 +11,8 @@ public:
 	void idle(Animation* a);
 	void jumping(Animation* a);
 	void climbing(Animation* a);
+	void shoveling(Animation* a);
+	void swordmanShip(Animation* a);
 };
 
 #endif // !IDLE_H

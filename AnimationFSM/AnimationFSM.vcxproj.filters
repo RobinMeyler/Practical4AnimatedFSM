@@ -78,6 +78,9 @@
     <ClInclude Include="Shoveling.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
+    <ClInclude Include="SwordmanShip.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files\FSM</Filter>
     </ClCompile>
     <ClCompile Include="Shoveling.cpp">
+      <Filter>Source Files\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="SwordmanShip.cpp">
       <Filter>Source Files\FSM</Filter>
     </ClCompile>
   </ItemGroup>

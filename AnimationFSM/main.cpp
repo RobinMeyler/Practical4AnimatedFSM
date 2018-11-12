@@ -4,6 +4,13 @@
 #include <Player.h>
 #include <Input.h>
 #include <Debug.h>
+#include "SwordmanShip.h"
+
+#include "Shoveling.h"
+#include <Jumping.h>
+#include <Climbing.h>
+#include <Idle.h>
+#include <Hammering.h>
 
 using namespace std;
 void doAddFrames(AnimatedSprite &anime, int pos);
@@ -24,10 +31,14 @@ int main()
 	AnimatedSprite animated_spriteJumping(texture);
 	AnimatedSprite animated_spriteClimbing(texture);
 	AnimatedSprite animated_spriteHammering(texture);
+	AnimatedSprite animated_spriteShoveling(texture);
+	AnimatedSprite animated_spriteSwordmanShip(texture);
 	doAddFrames(animated_spriteIdle, 0);
 	doAddFrames(animated_spriteJumping, 1);
 	doAddFrames(animated_spriteClimbing, 2);
 	doAddFrames(animated_spriteHammering, 3);
+	doAddFrames(animated_spriteShoveling, 4);
+	doAddFrames(animated_spriteSwordmanShip, 5);
 	
 	// Setup the Player
 
@@ -48,27 +59,38 @@ int main()
 				window.close();
 				break;
 			case sf::Event::KeyPressed:
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-				{
-					input.setCurrent(Input::Action::LEFT);
-					player.setAnimation(animated_spriteIdle);
-				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-				{
-					input.setCurrent(Input::Action::RIGHT);
-					player.setAnimation(animated_spriteJumping);
-				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-				{
-					input.setCurrent(Input::Action::UP);
-					player.setAnimation(animated_spriteClimbing);
-				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 				{
 					input.setCurrent(Input::Action::IDLE);
+					player.setAnimation(animated_spriteIdle);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+				{
+					input.setCurrent(Input::Action::JUMPING);
+					player.setAnimation(animated_spriteJumping);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+				{
+					input.setCurrent(Input::Action::CLIMBING);
+					player.setAnimation(animated_spriteClimbing);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+				{
+					input.setCurrent(Input::Action::HAMMERING);
 					player.setAnimation(animated_spriteHammering);
 				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
+				{
+					input.setCurrent(Input::Action::SHOVELING);
+					player.setAnimation(animated_spriteShoveling);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+				{
+					input.setCurrent(Input::Action::SHOVELING);
+					player.setAnimation(animated_spriteSwordmanShip);
+				}
 				break;
+				
 			}
 		}
 
@@ -77,7 +99,7 @@ int main()
 
 		// Update the Player
 		player.update();
-
+	
 		// Clear screen
 		window.clear();
 
@@ -94,10 +116,10 @@ int main()
 
 void doAddFrames(AnimatedSprite &anime, int pos)
 {
-	anime.addFrame(sf::IntRect(3,   84 * (pos) + 3, 84, 84));
-	anime.addFrame(sf::IntRect(88,  84 * (pos) + 3, 84, 84));
-	anime.addFrame(sf::IntRect(173, 84 * (pos) + 3, 84, 84));
-	anime.addFrame(sf::IntRect(258, 84 * (pos) + 3, 84, 84));
-	anime.addFrame(sf::IntRect(343, 84 * (pos) + 3, 84, 84));
-	anime.addFrame(sf::IntRect(428, 84 * (pos) + 3, 84, 84));
+	anime.addFrame(sf::IntRect(3,   85 * (pos) + 3, 84, 84));
+	anime.addFrame(sf::IntRect(88,  85 * (pos) + 3, 84, 84));
+	anime.addFrame(sf::IntRect(173, 85 * (pos) + 3, 84, 84));
+	anime.addFrame(sf::IntRect(258, 85 * (pos) + 3, 84, 84));
+	anime.addFrame(sf::IntRect(343, 85 * (pos) + 3, 84, 84));
+	anime.addFrame(sf::IntRect(428, 85 * (pos) + 3, 84, 84));
 }

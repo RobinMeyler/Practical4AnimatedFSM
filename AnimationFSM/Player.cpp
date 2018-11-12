@@ -10,7 +10,7 @@ Player::Player()
 	m_animation.setPrevious(new Idle());
 
 	
-	//doSetup();
+	
 	
 }
 
@@ -20,10 +20,15 @@ Player::Player(const AnimatedSprite& s) : m_animated_sprite(s)
 	m_animation.setPrevious(new Idle());
 
 	
-	//doSetup();
+	
 }
 
 Player::~Player() {}
+
+Animation Player::getAnimationState()
+{
+	return m_animation;
+}
 
 
 
@@ -46,21 +51,28 @@ void Player::handleInput(Input in)
 	switch (in.getCurrent())
 	{
 	case Input::Action::IDLE:
-		//std::cout << "Player Idling" << std::endl;
+	
 		m_animation.idle();
 		break;
-	case Input::Action::UP:
-		//std::cout << "Player Up" << std::endl;
+	case Input::Action::CLIMBING:
+		
 		m_animation.climbing();
 		break;
-	case Input::Action::LEFT:
-		//std::cout << "Player Left" << std::endl;
+	case Input::Action::JUMPING:
+	
 		m_animation.jumping();
 		break;
-	case Input::Action::RIGHT:
-		//std::cout << "Player Idling" << std::endl;
-		m_animation.jumping();
+	case Input::Action::HAMMERING:
+	
+		m_animation.hammering();
+		break;
+	case Input::Action::SHOVELING:
 		
+		m_animation.shoveling();
+		break;
+	case Input::Action::SWORDMANSHIP:
+
+		m_animation.swordmanShip();
 		break;
 	default:
 		break;
@@ -71,21 +83,6 @@ void Player::update()
 {
 	//std::cout << "Handle Update" << std::endl;
 	m_animated_sprite.update();
+
 }
 
-void Player::doSetup()
-{
-	/*animated_spriteIdle.addFrame(sf::IntRect(3, 3, 84, 84));
-	animated_spriteIdle.addFrame(sf::IntRect(88, 3, 84, 84));
-	animated_spriteIdle.addFrame(sf::IntRect(173, 3, 84, 84));
-	animated_spriteIdle.addFrame(sf::IntRect(258, 3, 84, 84));
-	animated_spriteIdle.addFrame(sf::IntRect(343, 3, 84, 84));
-	animated_spriteIdle.addFrame(sf::IntRect(428, 3, 84, 84));
-
-	animated_spriteJumping.addFrame(sf::IntRect(3, 84 + 3, 84, 84));
-	animated_spriteJumping.addFrame(sf::IntRect(88, 84 + 3, 84, 84));
-	animated_spriteJumping.addFrame(sf::IntRect(173, 84 + 3, 84, 84));
-	animated_spriteJumping.addFrame(sf::IntRect(258, 84 + 3, 84, 84));
-	animated_spriteJumping.addFrame(sf::IntRect(343, 84 + 3, 84, 84));
-	animated_spriteJumping.addFrame(sf::IntRect(428, 84 + 3, 84, 84));*/
-}

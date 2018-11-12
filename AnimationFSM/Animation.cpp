@@ -42,3 +42,16 @@ void Animation::climbing()
 {
 	m_current->climbing(this);
 }
+void Animation::hammering()
+{
+	m_current->hammering(this);
+}
+
+void Animation::shoveling()
+{
+	m_current->shoveling(this);
+}
+void Animation::swordmanShip()
+{
+	m_current->swordmanShip(this);
+}

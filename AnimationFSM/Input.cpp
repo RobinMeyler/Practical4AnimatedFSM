@@ -10,6 +10,10 @@ void Input::setCurrent(Action a) {
 	m_current = a;
 }
 
+void Input::shoveling()
+{
+}
+
 Input::Action Input::getCurrent() {
 	return m_current;
 }

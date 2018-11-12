@@ -16,7 +16,7 @@ private:
 public:
 	Player(const AnimatedSprite&);
 	~Player();
-	void doSetup();
+	Animation getAnimationState();
 	AnimatedSprite& getAnimatedSprite();
 	void setAnimation(AnimatedSprite s);
 	void handleInput(Input);

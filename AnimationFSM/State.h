@@ -7,13 +7,16 @@
 #include <Input.h>
 #include <Animation.h>
 #include <Debug.h>
-
+#include <SFML/Graphics.hpp>
+#include <AnimatedSprite.h>
 class State
 {
 public:
+	
 	virtual void handleInput() {}
 
-	virtual void update() {}
+	virtual void update() {
+	}
 
 	virtual void idle(Animation* a)
 	{
@@ -27,6 +30,21 @@ public:
 	{
 		DEBUG_MSG("State::Climbing");
 	}
+
+	virtual void hammering(Animation* a)
+	{
+		DEBUG_MSG("State::Hammering");
+	}
+	virtual void shoveling(Animation* a)
+	{
+		DEBUG_MSG("State::Shoveling");
+	}
+	virtual void swordmanShip(Animation* a)
+	{
+		DEBUG_MSG("State::SwordmanShip");
+	}
+private:
+		
 };
 
 #endif // ! ANIMATION_H
