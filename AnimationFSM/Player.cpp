@@ -8,19 +8,12 @@ Player::Player()
 {
 	m_animation.setCurrent(new Idle());
 	m_animation.setPrevious(new Idle());
-
-	
-	
-	
 }
 
 Player::Player(const AnimatedSprite& s) : m_animated_sprite(s)
 {
 	m_animation.setCurrent(new Idle());
 	m_animation.setPrevious(new Idle());
-
-	
-	
 }
 
 Player::~Player() {}
@@ -29,8 +22,6 @@ Animation Player::getAnimationState()
 {
 	return m_animation;
 }
-
-
 
 AnimatedSprite& Player::getAnimatedSprite()
 {
@@ -44,45 +35,38 @@ void Player::setAnimation(AnimatedSprite  s)
 	m_animated_sprite = s;
 }
 
-void Player::handleInput(Input in)
+void Player::handleInput()
 {
 	DEBUG_MSG("Handle Input");
 
-	switch (in.getCurrent())
+	if (m_animated_sprite.getTextureRect().top == 85 * 0 + 3)			// TextureRec positions
 	{
-	case Input::Action::IDLE:
-	
 		m_animation.idle();
-		break;
-	case Input::Action::CLIMBING:
-		
-		m_animation.climbing();
-		break;
-	case Input::Action::JUMPING:
-	
+	}
+	if (m_animated_sprite.getTextureRect().top == 85 * 1 + 3)
+	{
 		m_animation.jumping();
-		break;
-	case Input::Action::HAMMERING:
-	
+	}
+	if (m_animated_sprite.getTextureRect().top == 85 * 2 + 3)
+	{
+		m_animation.climbing();
+	}
+	if (m_animated_sprite.getTextureRect().top == 85 * 3 + 3)
+	{
 		m_animation.hammering();
-		break;
-	case Input::Action::SHOVELING:
-		
+	}
+	if (m_animated_sprite.getTextureRect().top == 85 * 4 + 3)
+	{
 		m_animation.shoveling();
-		break;
-	case Input::Action::SWORDMANSHIP:
-
+	}
+	if (m_animated_sprite.getTextureRect().top == 85 * 5 + 3)
+	{
 		m_animation.swordmanShip();
-		break;
-	default:
-		break;
 	}
 }
 
 void Player::update()
 {
-	//std::cout << "Handle Update" << std::endl;
 	m_animated_sprite.update();
-
 }
 

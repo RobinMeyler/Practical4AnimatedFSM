@@ -7,8 +7,6 @@
 #include <Hammering.h>
 
 
-
-
 void SwordmanShip::idle(Animation * a)
 {
 	std::cout << "SwordmanShip -> Idle" << std::endl;

@@ -19,7 +19,7 @@ public:
 	Animation getAnimationState();
 	AnimatedSprite& getAnimatedSprite();
 	void setAnimation(AnimatedSprite s);
-	void handleInput(Input);
+	void handleInput();
 	void update();
 };
 

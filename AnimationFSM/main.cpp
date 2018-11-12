@@ -61,32 +61,26 @@ int main()
 			case sf::Event::KeyPressed:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 				{
-					input.setCurrent(Input::Action::IDLE);
 					player.setAnimation(animated_spriteIdle);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-				{
-					input.setCurrent(Input::Action::JUMPING);
+				{	
 					player.setAnimation(animated_spriteJumping);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
 				{
-					input.setCurrent(Input::Action::CLIMBING);
 					player.setAnimation(animated_spriteClimbing);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
 				{
-					input.setCurrent(Input::Action::HAMMERING);
 					player.setAnimation(animated_spriteHammering);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 				{
-					input.setCurrent(Input::Action::SHOVELING);
 					player.setAnimation(animated_spriteShoveling);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
 				{
-					input.setCurrent(Input::Action::SHOVELING);
 					player.setAnimation(animated_spriteSwordmanShip);
 				}
 				break;
@@ -95,7 +89,7 @@ int main()
 		}
 
 		// Handle input to Player
-		player.handleInput(input);
+		player.handleInput();
 
 		// Update the Player
 		player.update();
